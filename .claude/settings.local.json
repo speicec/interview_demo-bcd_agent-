@@ -30,7 +30,14 @@
       "Bash(node -e \"require\\('class-variance-authority'\\); require\\('clsx'\\); require\\('tailwind-merge'\\); console.log\\('OK'\\)\")",
       "Bash(grep -r \"class-variance-authority\\\\|clsx\\\\|lucide-react\\\\|tailwind-merge\" client/src/ --include=\"*.tsx\" --include=\"*.ts\")",
       "Bash(ls node_modules/class-variance-authority)",
-      "Bash(ls node_modules/lucide-react)"
+      "Bash(ls node_modules/lucide-react)",
+      "Bash(git commit -m 'feat\\(client\\): 配置 Clinical Precision 设计令牌与 shadcn/ui CSS 变量 *)",
+      "Bash(git commit -m 'feat\\(client\\): 创建 shadcn/ui Button/Card/Badge/Input/Textarea 组件 *)",
+      "Bash(git commit -m 'feat\\(client\\): Clinical Precision 页面组件重设计完成 *)",
+      "Bash(git commit -m 'docs: 添加 Clinical Precision 前端重设计实现计划 *)",
+      "Bash(pkill -f \"vite\")",
+      "Bash(git rm *)",
+      "Bash(echo \"exit: $?\")"
     ]
   }
 }
