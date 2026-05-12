@@ -219,16 +219,8 @@ export function buildPrintHTML(result: AnalysisResult): string {
   </table>
 
   <div class="footer">
-    <div class="pages">第 <span class="page">1</span> 页，共 <span class="total">1</span> 页</div>
     <div>${DISCLAIMER}</div>
   </div>
-
-  <script>
-    (function() {
-      var totalEl = document.querySelector('.footer .total');
-      if (totalEl) totalEl.textContent = '?';
-    })();
-  </script>
 </body>
 </html>`;
 }
