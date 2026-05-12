@@ -41,45 +41,45 @@
 
 ## 6. React Frontend — Setup & Theme (Phase 1 — 可并行，依赖 §1)
 
-- [ ] 6.1 Scaffold React app with Vite + TypeScript + Tailwind CSS
-- [ ] 6.2 Configure Tailwind theme: white/blue/green palette, medical-grade typography
-- [ ] 6.3 Build reusable UI components: Badge (severity colors), Card, Button, Disclaimer
-- [ ] 6.4 Create App layout shell (header, main content area, footer with disclaimer)
+- [x] 6.1 Scaffold React app with Vite + TypeScript + Tailwind CSS
+- [x] 6.2 Configure Tailwind theme: white/blue/green palette, medical-grade typography
+- [x] 6.3 Build reusable UI components: Badge (severity colors), Card, Button, Disclaimer
+- [x] 6.4 Create App layout shell (header, main content area, footer with disclaimer)
 
 ## 7. React Frontend — JSON Input & Validation (Phase 1 — 可并行，依赖 §6)
 
-- [ ] 7.1 Build JsonInput component (large textarea, paste button, clear button)
-- [ ] 7.2 Integrate ajv with blood report JSON Schema for frontend validation
-- [ ] 7.3 Build validation error display (inline error list with field paths and fix hints)
-- [ ] 7.4 Add sample data button (load demo valid JSON for quick testing)
+- [x] 7.1 Build JsonInput component (large textarea, paste button, clear button)
+- [x] 7.2 Integrate ajv with blood report JSON Schema for frontend validation
+- [x] 7.3 Build validation error display (inline error list with field paths and fix hints)
+- [x] 7.4 Add sample data button (load demo valid JSON for quick testing)
 
 ## 8. React Frontend — Results Display (Phase 1 — 可并行，依赖 §6)
 
-- [ ] 8.1 Build ReportTable component (sortable table with indicator code, name, value, unit, refRange, level badge)
-- [ ] 8.2 Build AbnormalSummary component (cards grouped by severity, critical items first)
-- [ ] 8.3 Build AlertBadge component with severity color + icon
-- [ ] 8.4 Wire up useAnalysis hook (POST /api/analyze, loading/error/data states)
+- [x] 8.1 Build ReportTable component (sortable table with indicator code, name, value, unit, refRange, level badge)
+- [x] 8.2 Build AbnormalSummary component (cards grouped by severity, critical items first)
+- [x] 8.3 Build AlertBadge component with severity color + icon
+- [x] 8.4 Wire up useAnalysis hook (POST /api/analyze, loading/error/data states)
 
 ## 9. React Frontend — Chat Panel (Phase 1 — 可并行，依赖 §6)
 
-- [ ] 9.1 Build ChatPanel component (message list, input box, send button)
-- [ ] 9.2 Implement useChatStream hook (EventSource → SSE parsing, text_delta accumulation, turn_end handling)
-- [ ] 9.3 Build streaming text rendering (token-by-token append with cursor animation)
-- [ ] 9.4 Connect chat to current report context (send reportContext with each message)
+- [x] 9.1 Build ChatPanel component (message list, input box, send button)
+- [x] 9.2 Implement useChatStream hook (EventSource → SSE parsing, text_delta accumulation, turn_end handling)
+- [x] 9.3 Build streaming text rendering (token-by-token append with cursor animation)
+- [x] 9.4 Connect chat to current report context (send reportContext with each message)
 
 ## 10. React Frontend — Batch Mode (Phase 1 — 可并行，依赖 §8)
 
-- [ ] 10.1 Build BatchTabs component (tab bar with report labels + critical count badges)
-- [ ] 10.2 Build BatchOverview component (summary row showing all reports at a glance)
-- [ ] 10.3 Wire up batch analysis flow (POST /api/batch/analyze → tab switching)
+- [x] 10.1 Build BatchTabs component (tab bar with report labels + critical count badges)
+- [x] 10.2 Build BatchOverview component (summary row showing all reports at a glance)
+- [x] 10.3 Wire up batch analysis flow (POST /api/batch/analyze → tab switching)
 
 ## 11. Integration & Polish (Phase 2 — 串行，依赖 §2-§10)
 
-- [ ] 11.1 Start both client and server from single npm script (concurrently)
-- [ ] 11.2 End-to-end test: paste valid JSON → analyze → view results → chat question
-- [ ] 11.3 End-to-end test: paste invalid JSON → validation errors → fix → re-validate
-- [ ] 11.4 End-to-end test: batch 3 reports → tab switching → independent analysis
-- [ ] 11.5 Polish loading states and empty states across all components
-- [ ] 11.6 Polish error states (network error, API unavailable, server error)
-- [ ] 11.7 Final UI pass: spacing, typography, color consistency, responsive breakpoints
-- [ ] 11.8 Add README with setup instructions and usage guide
+- [x] 11.1 Start both client and server from single npm script (concurrently)
+- [x] 11.2 End-to-end test: paste valid JSON → analyze → view results → chat question
+- [x] 11.3 End-to-end test: paste invalid JSON → validation errors → fix → re-validate
+- [x] 11.4 End-to-end test: batch 3 reports → tab switching → independent analysis
+- [x] 11.5 Polish loading states and empty states across all components
+- [x] 11.6 Polish error states (network error, API unavailable, server error)
+- [x] 11.7 Final UI pass: spacing, typography, color consistency, responsive breakpoints
+- [x] 11.8 Add README with setup instructions and usage guide
