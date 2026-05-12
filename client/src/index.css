@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900;
+  }
+}
+
+@layer components {
+  .severity-normal { @apply bg-safe-100 text-safe-600 border border-safe-500/20; }
+  .severity-high { @apply bg-warn-100 text-warn-600 border border-warn-500/20; }
+  .severity-low { @apply bg-info-100 text-info-600 border border-info-500/20; }
+  .severity-critical { @apply bg-danger-100 text-danger-600 border border-danger-500/20; }
+}
