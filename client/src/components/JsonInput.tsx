@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Ajv from "ajv";
+import Ajv from "ajv/dist/2020";
 import { BLOOD_REPORT_SCHEMA } from "@blood-report/shared";
 import type { BloodReport } from "@blood-report/shared";
 import { Button } from "./ui/Button";
