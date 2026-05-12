@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "name": "血常规 + 超敏C反应蛋白",
+    "sample_id": "BLD663667",
+    "sample_time": "2026-05-12 10:55",
+    "report_time": "2026-05-12 15:50",
+    "patient_sex": "男",
+    "patient_age": 53,
+    "abnormal_flags": {
+      "WBC": "↑↑",
+      "NEUT_pct": "↑↑",
+      "NEUT_abs": "↑↑",
+      "LYMPH_pct": "↓",
+      "LYMPH_abs": "↓",
+      "hsCRP": "↑↑"
+    }
+  },
+  "items": {
+    "WBC":         { "value": 18.01, "ref": "4.0-10.0",      "unit": "×10⁹/L",  "flag": "↑↑" },
+    "RBC":         { "value": 4.90,  "ref": "4.0-5.5",       "unit": "×10¹²/L", "flag": "" },
+    "HGB":         { "value": 169.4, "ref": "130-175",       "unit": "g/L",      "flag": "" },
+    "HCT":         { "value": 43.2,  "ref": "40-50",         "unit": "%",        "flag": "" },
+    "MCV":         { "value": 99.18, "ref": "82-100",        "unit": "fL",       "flag": "" },
+    "MCH":         { "value": 30.86, "ref": "27-34",         "unit": "pg",       "flag": "" },
+    "MCHC":        { "value": 332.98,"ref": "316-354",       "unit": "g/L",      "flag": "" },
+    "RDW_CV":      { "value": 13.03, "ref": "11.5-14.5",     "unit": "%",        "flag": "" },
+    "PLT":         { "value": 264.28,"ref": "100-300",       "unit": "×10⁹/L",  "flag": "" },
+    "MPV":         { "value": 9.91,  "ref": "7.0-11.0",      "unit": "fL",       "flag": "" },
+    "NEUT_pct":    { "value": 87.7,  "ref": "40-75",         "unit": "%",        "flag": "↑↑" },
+    "LYMPH_pct":   { "value": 7.0,   "ref": "20-50",         "unit": "%",        "flag": "↓" },
+    "MONO_pct":    { "value": 5.88,  "ref": "3-10",          "unit": "%",        "flag": "" },
+    "EO_pct":      { "value": 5.39,  "ref": "0.4-8.0",       "unit": "%",        "flag": "" },
+    "BASO_pct":    { "value": 0.92,  "ref": "0-1.0",         "unit": "%",        "flag": "" },
+    "NEUT_abs":    { "value": 15.79, "ref": "1.8-6.3",       "unit": "×10⁹/L",  "flag": "↑↑" },
+    "LYMPH_abs":   { "value": 1.26,  "ref": "1.1-3.2",       "unit": "×10⁹/L",  "flag": "↓" },
+    "MONO_abs":    { "value": 0.53,  "ref": "0.1-0.6",       "unit": "×10⁹/L",  "flag": "" },
+    "EO_abs":      { "value": 0.22,  "ref": "0.02-0.52",     "unit": "×10⁹/L",  "flag": "" },
+    "BASO_abs":    { "value": 0.04,  "ref": "0-0.06",        "unit": "×10⁹/L",  "flag": "" },
+    "hsCRP":       { "value": 40.7,  "ref": "0-5.0",         "unit": "mg/L",     "flag": "↑↑" }
+  }
+}
