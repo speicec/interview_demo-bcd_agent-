@@ -8,36 +8,36 @@
 
 ## 2. Rule Engine (Phase 1 — 可并行，依赖 §1)
 
-- [ ] 2.1 Implement reference range lookup with gender/age correction
-- [ ] 2.2 Implement single-indicator analyzer (value → level: normal/high/critical/low)
-- [ ] 2.3 Implement interpretation text generator (template per indicator code + level)
-- [ ] 2.4 Implement multi-indicator correlation rules (infection pattern, anemia type, pancytopenia)
-- [ ] 2.5 Implement main rule engine orchestrator (input BloodReport → output AnalysisResult)
-- [ ] 2.6 Write unit tests for rule engine with known input/output pairs
+- [x] 2.1 Implement reference range lookup with gender/age correction
+- [x] 2.2 Implement single-indicator analyzer (value → level: normal/high/critical/low)
+- [x] 2.3 Implement interpretation text generator (template per indicator code + level)
+- [x] 2.4 Implement multi-indicator correlation rules (infection pattern, anemia type, pancytopenia)
+- [x] 2.5 Implement main rule engine orchestrator (input BloodReport → output AnalysisResult)
+- [x] 2.6 Write unit tests for rule engine with known input/output pairs
 
 ## 3. Express Server Scaffold (Phase 1 — 可并行，依赖 §1)
 
-- [ ] 3.1 Initialize server package with Express, TypeScript, dev scripts
-- [ ] 3.2 Configure DeepSeek provider via pi-ai (baseURL: https://api.deepseek.com, model: deepseek-v4-flash)
-- [ ] 3.3 Create pi agent session factory with medical system prompt
-- [ ] 3.4 Implement SessionPool with TTL cleanup (Map<chatId, session>, 30min TTL, max 100)
-- [ ] 3.5 Set up Express app with CORS, JSON body parser, error handling middleware
-- [ ] 3.6 Create route scaffolds (analyze, chat, batch) with placeholder responses
+- [x] 3.1 Initialize server package with Express, TypeScript, dev scripts
+- [x] 3.2 Configure DeepSeek provider via pi-ai (baseURL: https://api.deepseek.com, model: deepseek-v4-flash)
+- [x] 3.3 Create pi agent session factory with medical system prompt
+- [x] 3.4 Implement SessionPool with TTL cleanup (Map<chatId, session>, 30min TTL, max 100)
+- [x] 3.5 Set up Express app with CORS, JSON body parser, error handling middleware
+- [x] 3.6 Create route scaffolds (analyze, chat, batch) with placeholder responses
 
 ## 4. API Routes (Phase 1 — 可并行，依赖 §3 + §2)
 
-- [ ] 4.1 POST /api/analyze — accept validated report JSON, run rule engine, return AnalysisResult
-- [ ] 4.2 POST /api/chat/stream — SSE endpoint: create/resume pi session, stream text_delta + turn_end events
-- [ ] 4.3 POST /api/chat — non-streaming chat fallback endpoint
-- [ ] 4.4 GET /api/chat/:id/history — return conversation message history
-- [ ] 4.5 POST /api/batch/analyze — accept array of reports, run rule engine on each, return AnalysisResult[]
+- [x] 4.1 POST /api/analyze — accept validated report JSON, run rule engine, return AnalysisResult
+- [x] 4.2 POST /api/chat/stream — SSE endpoint: create/resume pi session, stream text_delta + turn_end events
+- [x] 4.3 POST /api/chat — non-streaming chat fallback endpoint
+- [x] 4.4 GET /api/chat/:id/history — return conversation message history
+- [x] 4.5 POST /api/batch/analyze — accept array of reports, run rule engine on each, return AnalysisResult[]
 
 ## 5. Custom Pi Tools (Phase 1 — 可并行，依赖 §3 + §2)
 
-- [ ] 5.1 Define `analyze_blood_report` tool with TypeBox schema (calls rule engine)
-- [ ] 5.2 Define `get_reference_range` tool with TypeBox schema (queries reference range DB)
-- [ ] 5.3 Register custom tools in session factory and verify LLM can invoke them
-- [ ] 5.4 Write medical system prompt (role, constraints, disclaimer requirement)
+- [x] 5.1 Define `analyze_blood_report` tool with TypeBox schema (calls rule engine)
+- [x] 5.2 Define `get_reference_range` tool with TypeBox schema (queries reference range DB)
+- [x] 5.3 Register custom tools in session factory and verify LLM can invoke them
+- [x] 5.4 Write medical system prompt (role, constraints, disclaimer requirement)
 
 ## 6. React Frontend — Setup & Theme (Phase 1 — 可并行，依赖 §1)
 

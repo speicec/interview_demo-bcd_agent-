@@ -11,7 +11,9 @@
       "Bash(openspec instructions *)",
       "Bash(npm install *)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(npx vitest *)",
+      "Bash(npx tsc *)"
     ]
   }
 }
