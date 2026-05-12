@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import type { BloodReport, AnalysisResult } from "@blood-report/shared";
 import { JsonInput } from "./components/JsonInput";
 import { ReportTable } from "./components/ReportTable";
