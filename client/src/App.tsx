@@ -83,7 +83,7 @@ export default function App() {
             {currentAnalysis && (
               <button
                 onClick={handleClear}
-                className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                className="text-xs text-muted-foreground hover:text-foreground transition-colors"
               >
                 清空结果
               </button>
@@ -115,7 +115,7 @@ export default function App() {
             {/* Error */}
             {error && (
               <Card className="animate-fade-in" style={{ animationDelay: "100ms" }}>
-                <div className="flex items-center gap-2 py-4 justify-center text-danger-500">
+                <div className="flex items-center gap-2 py-4 justify-center text-danger">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -156,7 +156,7 @@ export default function App() {
 
             {/* Empty state */}
             {!currentAnalysis && !loading && (
-              <div className="text-center py-12 text-gray-400">
+              <div className="text-center py-12 text-muted-foreground">
                 <svg className="w-16 h-16 mx-auto mb-4 text-border" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>

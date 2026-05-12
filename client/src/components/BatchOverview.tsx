@@ -26,7 +26,7 @@ export function BatchOverview({ results }: { results: AnalysisResult[] }) {
         <tbody>
           {results.map((r, i) => (
             <tr key={i} className="border-b border-border hover:bg-secondary/50">
-              <td className="py-2 px-3 font-medium text-gray-800 text-xs">
+              <td className="py-2 px-3 font-medium text-foreground text-xs">
                 {r.reportId ?? `报告 ${i + 1}`}
               </td>
               <td className="py-2 px-3 text-center">

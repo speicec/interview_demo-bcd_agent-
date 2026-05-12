@@ -42,22 +42,22 @@ export function AbnormalSummary({
           {alerts.map((alert, i) => (
             <div
               key={i}
-              className={`border-l-4 p-3 ${
+              className={`border-l-4 p-3 rounded-sm ${
                 alert.severity === "critical"
-                  ? "border-l-danger-500 bg-danger-50"
+                  ? "border-l-danger bg-danger/[0.06]"
                   : alert.severity === "warn"
-                    ? "border-l-warn-500 bg-warn-50"
-                    : "border-l-info-500 bg-info-50"
+                    ? "border-l-warn bg-warn/[0.06]"
+                    : "border-l-info bg-info/[0.06]"
               }`}
             >
               <div className="flex items-center gap-2">
                 <span
                   className={`text-xs font-bold ${
                     alert.severity === "critical"
-                      ? "text-danger-600"
+                      ? "text-danger"
                       : alert.severity === "warn"
-                        ? "text-warn-600"
-                        : "text-info-600"
+                        ? "text-warn"
+                        : "text-info"
                   }`}
                 >
                   {alert.title}
@@ -66,7 +66,7 @@ export function AbnormalSummary({
                   <Badge level="critical" />
                 )}
               </div>
-              <p className="text-xs text-gray-600 mt-1">{alert.description}</p>
+              <p className="text-xs text-muted-foreground mt-1">{alert.description}</p>
             </div>
           ))}
         </div>
@@ -85,7 +85,7 @@ export function AbnormalSummary({
 
       {groups.critical.length === 0 && groups.high.length === 0 && groups.low.length === 0 && (
         <div className="text-center py-4 text-sm text-muted-foreground flex items-center justify-center gap-2">
-          <svg className="w-5 h-5 text-safe-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg className="w-5 h-5 text-safe" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           所有指标均在正常范围内
@@ -120,14 +120,14 @@ function AbnormalSection({ title, items }: { title: string; items: IndicatorResu
         {items.map((ind) => (
           <div key={ind.code} className="flex items-start justify-between gap-3 bg-secondary/30 rounded-sm px-3 py-2">
             <div className="min-w-0">
-              <div className="text-sm font-medium text-gray-800">{ind.name}</div>
+              <div className="text-sm font-medium text-foreground">{ind.name}</div>
               {ind.interpretation && (
-                <div className="text-xs text-gray-500 mt-0.5 line-clamp-2">{ind.interpretation}</div>
+                <div className="text-xs text-muted-foreground mt-0.5 line-clamp-2">{ind.interpretation}</div>
               )}
             </div>
             <div className="text-right shrink-0">
-              <span className="text-sm font-semibold text-gray-800">{ind.value}</span>
-              <span className="text-xs text-gray-400 ml-1">{ind.unit}</span>
+              <span className="text-sm font-semibold text-foreground">{ind.value}</span>
+              <span className="text-xs text-muted-foreground ml-1">{ind.unit}</span>
             </div>
           </div>
         ))}

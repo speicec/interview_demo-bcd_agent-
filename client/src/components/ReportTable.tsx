@@ -33,7 +33,7 @@ export function ReportTable({ indicators }: { indicators: IndicatorResult[] }) {
               className={`border-b border-border hover:bg-secondary/50 transition-colors ${ind.level === "critical" ? "bg-danger/[0.04]" : ""}`}
             >
               <td className="py-2.5 px-3">
-                <div className="font-medium text-gray-800">{ind.name}</div>
+                <div className="font-medium text-foreground">{ind.name}</div>
                 <div className="text-xs text-muted-foreground font-mono">{ind.code}</div>
               </td>
               <td className="py-2.5 px-3 text-right tabular-nums">
@@ -42,13 +42,13 @@ export function ReportTable({ indicators }: { indicators: IndicatorResult[] }) {
                     ind.level === "critical"
                       ? "text-danger font-bold"
                       : ind.level !== "normal"
-                        ? "text-gray-800 font-medium"
-                        : "text-gray-600"
+                        ? "text-foreground font-medium"
+                        : "text-muted-foreground"
                   }
                 >
                   {ind.value}
                 </span>
-                <span className="text-gray-400 ml-1 text-xs">{ind.unit}</span>
+                <span className="text-muted-foreground ml-1 text-xs">{ind.unit}</span>
               </td>
               <td className="py-2.5 px-3 text-right text-muted-foreground tabular-nums text-xs">
                 {ind.refRange.min} – {ind.refRange.max}
