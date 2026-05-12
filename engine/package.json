@@ -1,0 +1,20 @@
+{
+  "name": "@blood-report/engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --experimental-vm-modules --no-warnings ../../node_modules/.bin/vitest run",
+    "test:watch": "node --experimental-vm-modules --no-warnings ../../node_modules/.bin/vitest"
+  },
+  "dependencies": {
+    "@blood-report/shared": "*"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.0"
+  }
+}
