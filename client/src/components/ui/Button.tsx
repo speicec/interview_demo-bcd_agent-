@@ -1,28 +1,37 @@
-import type { ReactNode, ButtonHTMLAttributes } from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "../../lib/utils";
+import type { ButtonHTMLAttributes } from "react";
 
-type Variant = "primary" | "secondary" | "ghost";
+const buttonVariants = cva(
+  "inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-40 disabled:cursor-not-allowed rounded-sm",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        outline: "border border-border text-foreground hover:bg-secondary",
+        ghost: "text-muted-foreground hover:text-foreground hover:bg-secondary",
+      },
+      size: {
+        default: "h-9 px-4 py-2",
+        sm: "h-8 px-3 text-xs",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+);
 
-const variantClass: Record<Variant, string> = {
-  primary: "bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800",
-  secondary: "bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300",
-  ghost: "bg-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-100",
-};
+interface ButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {}
 
-export function Button({
-  children,
-  variant = "primary",
-  className = "",
-  ...props
-}: {
-  children: ReactNode;
-  variant?: Variant;
-} & ButtonHTMLAttributes<HTMLButtonElement>) {
+export function Button({ className, variant, size, ...props }: ButtonProps) {
   return (
     <button
-      className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed ${variantClass[variant]} ${className}`}
+      className={cn(buttonVariants({ variant, size, className }))}
       {...props}
-    >
-      {children}
-    </button>
+    />
   );
 }

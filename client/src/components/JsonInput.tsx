@@ -124,10 +124,10 @@ export function JsonInput({
         <Button onClick={handleSubmit} disabled={errors.length > 0 || !jsonText.trim() || loading}>
           {loading ? "分析中..." : "分析报告"}
         </Button>
-        <Button variant="secondary" onClick={handlePaste}>
+        <Button variant="outline" onClick={handlePaste}>
           粘贴
         </Button>
-        <Button variant="secondary" onClick={handleLoadSample}>
+        <Button variant="outline" onClick={handleLoadSample}>
           示例数据
         </Button>
         <Button variant="ghost" onClick={handleClear}>
