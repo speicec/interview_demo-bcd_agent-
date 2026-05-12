@@ -1,0 +1,36 @@
+omx question - OMX-owned blocking user question entrypoint
+
+Usage:
+  omx question --input '<json>' [--json]
+  omx question --ui --state-path <absolute-or-relative-record-path>
+
+Options:
+  --help, -h           Show this help message
+  --input <json>       JSON object with question/options schema; blocks until answered
+  --input=<json>       Same as --input
+  --json               Emit compact JSON on stdout for machine callers
+  --ui                 Internal renderer mode; renders the OMX question UI for an existing state record
+  --state-path <path>  Question record path used by --ui mode
+
+Input schema:
+  {
+    "header": "Optional short heading",
+    "question": "What should OMX do next?",
+    "options": [
+      {"label": "Proceed", "value": "proceed", "description": "Continue"},
+      {"label": "Revise", "value": "revise"}
+    ],
+    "allow_other": true,
+    "other_label": "Other",
+    "type": "single-answerable",
+    "multi_select": false,
+    "source": "deep-interview",
+    "session_id": "optional-session-id"
+  }
+
+Notes:
+  - 'type' accepts 'single-answerable' or 'multi-answerable'; legacy 'multi_select' is still accepted.
+  - options may be [] only when allow_other is true, for a free-text-only prompt.
+  - machine callers should use --json and read stdout; the command does not return
+    until the user selected a predefined option or submitted Other text.
+
