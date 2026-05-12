@@ -37,7 +37,8 @@
       "Bash(git commit -m 'docs: 添加 Clinical Precision 前端重设计实现计划 *)",
       "Bash(pkill -f \"vite\")",
       "Bash(git rm *)",
-      "Bash(echo \"exit: $?\")"
+      "Bash(echo \"exit: $?\")",
+      "Bash(pkill -f \"tsx\")"
     ]
   }
 }
