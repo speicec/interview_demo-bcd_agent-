@@ -1,10 +1,10 @@
 ## 1. Shared Types & Data (Phase 0 — 串行，无依赖)
 
-- [ ] 1.1 Initialize monorepo root with package.json and tsconfig
-- [ ] 1.2 Create shared TypeScript types (BloodReport, Indicator, AnalysisResult, Alert, ReferenceRange)
-- [ ] 1.3 Create JSON Schema definition for blood report validation
-- [ ] 1.4 Create 2023 reference ranges data table (~25 core indicators with gender/age adjustments)
-- [ ] 1.5 Create shared constants (severity levels, unit mappings, indicator code enums)
+- [x] 1.1 Initialize monorepo root with package.json and tsconfig
+- [x] 1.2 Create shared TypeScript types (BloodReport, Indicator, AnalysisResult, Alert, ReferenceRange)
+- [x] 1.3 Create JSON Schema definition for blood report validation
+- [x] 1.4 Create 2023 reference ranges data table (~25 core indicators with gender/age adjustments)
+- [x] 1.5 Create shared constants (severity levels, unit mappings, indicator code enums)
 
 ## 2. Rule Engine (Phase 1 — 可并行，依赖 §1)
 
