@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Ajv from "ajv";
 import { BLOOD_REPORT_SCHEMA } from "@blood-report/shared";
 import type { BloodReport } from "@blood-report/shared";
@@ -10,8 +10,8 @@ interface ValidationError {
   message: string;
 }
 
-const ajv = new Ajv({ allErrors: true, verbose: true });
-const validate = ajv.compile(BLOOD_REPORT_SCHEMA as object);
+const ajv = new Ajv({ allErrors: true });
+const validate = ajv.compile(BLOOD_REPORT_SCHEMA);
 
 export function JsonInput({
   onSubmit,

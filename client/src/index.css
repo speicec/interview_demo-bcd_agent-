@@ -3,14 +3,67 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 40 14% 97%;
+    --foreground: 0 0% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 17%;
+    --border: 210 17% 92%;
+    --input: 210 17% 92%;
+    --ring: 200 23% 48%;
+    --muted: 40 14% 97%;
+    --muted-foreground: 0 0% 48%;
+    --primary: 202 34% 33%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 15% 94%;
+    --secondary-foreground: 202 34% 33%;
+    --safe: 152 36% 46%;
+    --safe-foreground: 0 0% 100%;
+    --warn: 43 63% 38%;
+    --warn-foreground: 0 0% 100%;
+    --danger: 6 66% 48%;
+    --danger-foreground: 0 0% 100%;
+    --info: 200 23% 48%;
+    --info-foreground: 0 0% 100%;
+    --accent: 200 15% 94%;
+    --accent-foreground: 202 34% 33%;
+    --destructive: 6 66% 48%;
+    --destructive-foreground: 0 0% 100%;
+    --radius: 0.25rem;
+  }
+
   body {
-    @apply bg-white text-gray-900;
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))];
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
 @layer components {
-  .severity-normal { @apply bg-safe-100 text-safe-600 border border-safe-500/20; }
-  .severity-high { @apply bg-warn-100 text-warn-600 border border-warn-500/20; }
-  .severity-low { @apply bg-info-100 text-info-600 border border-info-500/20; }
-  .severity-critical { @apply bg-danger-100 text-danger-600 border border-danger-500/20; }
+  .dot-grid {
+    background-image: radial-gradient(circle, hsl(210 17% 88% / 0.7) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .indicator-normal {
+    @apply text-[hsl(var(--safe))] border border-[hsl(var(--safe)/0.3)] bg-[hsl(var(--safe)/0.06)] rounded-sm;
+  }
+  .indicator-high {
+    @apply text-[hsl(var(--warn))] border border-[hsl(var(--warn)/0.3)] bg-[hsl(var(--warn)/0.06)] rounded-sm;
+  }
+  .indicator-low {
+    @apply text-[hsl(var(--info))] border border-[hsl(var(--info)/0.3)] bg-[hsl(var(--info)/0.06)] rounded-sm;
+  }
+  .indicator-critical {
+    @apply text-[hsl(var(--danger))] border border-[hsl(var(--danger)/0.3)] bg-[hsl(var(--danger)/0.08)] rounded-sm border-l-4 border-l-[hsl(var(--danger))];
+  }
+
+  .serif-title {
+    font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
+  }
+
+  .card-title-divider {
+    @apply border-t border-dotted border-[hsl(var(--border))];
+  }
 }
