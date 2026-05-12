@@ -9,6 +9,7 @@ import { BatchOverview } from "./components/BatchOverview";
 import { Card } from "./components/ui/Card";
 import { Disclaimer } from "./components/ui/Disclaimer";
 import { useAnalysis } from "./hooks/useAnalysis";
+import { printReport } from "./lib/printReport";
 
 type BatchResult = { results: AnalysisResult[] };
 
@@ -81,12 +82,23 @@ export default function App() {
           </div>
           <div className="flex items-center gap-2">
             {currentAnalysis && (
-              <button
-                onClick={handleClear}
-                className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-              >
-                清空结果
-              </button>
+              <>
+                <button
+                  onClick={() => printReport(currentAnalysis)}
+                  className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                  </svg>
+                  打印报告
+                </button>
+                <button
+                  onClick={handleClear}
+                  className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  清空结果
+                </button>
+              </>
             )}
           </div>
         </div>
