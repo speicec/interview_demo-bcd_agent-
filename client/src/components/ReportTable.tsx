@@ -11,17 +11,17 @@ export function ReportTable({ indicators }: { indicators: IndicatorResult[] }) {
     <div className="overflow-x-auto">
       <table className="w-full text-sm">
         <thead>
-          <tr className="border-b border-gray-200">
-            <th className="text-left py-2.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+          <tr className="border-b border-border bg-secondary/50">
+            <th className="text-left py-2.5 px-3 text-xs font-semibold text-muted-foreground tracking-wide font-serif">
               指标
             </th>
-            <th className="text-right py-2.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+            <th className="text-right py-2.5 px-3 text-xs font-semibold text-muted-foreground tracking-wide font-serif">
               结果
             </th>
-            <th className="text-right py-2.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+            <th className="text-right py-2.5 px-3 text-xs font-semibold text-muted-foreground tracking-wide font-serif">
               参考范围
             </th>
-            <th className="text-center py-2.5 px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+            <th className="text-center py-2.5 px-3 text-xs font-semibold text-muted-foreground tracking-wide font-serif">
               判定
             </th>
           </tr>
@@ -30,17 +30,17 @@ export function ReportTable({ indicators }: { indicators: IndicatorResult[] }) {
           {sorted.map((ind) => (
             <tr
               key={ind.code}
-              className="border-b border-gray-100 hover:bg-gray-50/50 transition-colors"
+              className={`border-b border-border hover:bg-secondary/50 transition-colors ${ind.level === "critical" ? "bg-danger/[0.04]" : ""}`}
             >
               <td className="py-2.5 px-3">
                 <div className="font-medium text-gray-800">{ind.name}</div>
-                <div className="text-xs text-gray-400 font-mono">{ind.code}</div>
+                <div className="text-xs text-muted-foreground font-mono">{ind.code}</div>
               </td>
               <td className="py-2.5 px-3 text-right tabular-nums">
                 <span
                   className={
                     ind.level === "critical"
-                      ? "text-danger-600 font-bold"
+                      ? "text-danger font-bold"
                       : ind.level !== "normal"
                         ? "text-gray-800 font-medium"
                         : "text-gray-600"
@@ -50,7 +50,7 @@ export function ReportTable({ indicators }: { indicators: IndicatorResult[] }) {
                 </span>
                 <span className="text-gray-400 ml-1 text-xs">{ind.unit}</span>
               </td>
-              <td className="py-2.5 px-3 text-right text-gray-500 tabular-nums text-xs">
+              <td className="py-2.5 px-3 text-right text-muted-foreground tabular-nums text-xs">
                 {ind.refRange.min} – {ind.refRange.max}
               </td>
               <td className="py-2.5 px-3 text-center">

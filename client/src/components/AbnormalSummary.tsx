@@ -29,20 +29,20 @@ export function AbnormalSummary({
     <div className="space-y-4">
       {/* Summary counts */}
       <div className="flex gap-3 flex-wrap">
-        <SummaryStat label="危急" count={groups.critical.length} className="text-danger-600 bg-danger-50" />
-        <SummaryStat label="偏高" count={groups.high.length} className="text-warn-600 bg-warn-50" />
-        <SummaryStat label="偏低" count={groups.low.length} className="text-info-600 bg-info-50" />
-        <SummaryStat label="正常" count={indicators.filter((i) => i.level === "normal").length} className="text-safe-600 bg-safe-50" />
+        <SummaryStat label="危急" count={groups.critical.length} className="text-danger bg-danger/[0.06]" />
+        <SummaryStat label="偏高" count={groups.high.length} className="text-warn bg-warn/[0.06]" />
+        <SummaryStat label="偏低" count={groups.low.length} className="text-info bg-info/[0.06]" />
+        <SummaryStat label="正常" count={indicators.filter((i) => i.level === "normal").length} className="text-safe bg-safe/[0.06]" />
       </div>
 
       {/* Correlation alerts */}
       {alerts.length > 0 && (
         <div className="space-y-2">
-          <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wide">关联预警</h4>
+          <h4 className="serif-title text-sm font-bold text-muted-foreground">关联预警</h4>
           {alerts.map((alert, i) => (
             <div
               key={i}
-              className={`border-l-4 p-3 rounded-r-lg ${
+              className={`border-l-4 p-3 ${
                 alert.severity === "critical"
                   ? "border-l-danger-500 bg-danger-50"
                   : alert.severity === "warn"
@@ -84,7 +84,7 @@ export function AbnormalSummary({
       )}
 
       {groups.critical.length === 0 && groups.high.length === 0 && groups.low.length === 0 && (
-        <div className="text-center py-4 text-sm text-gray-400 flex items-center justify-center gap-2">
+        <div className="text-center py-4 text-sm text-muted-foreground flex items-center justify-center gap-2">
           <svg className="w-5 h-5 text-safe-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
@@ -105,7 +105,7 @@ function SummaryStat({
   className: string;
 }) {
   return (
-    <div className={`rounded-lg px-4 py-2 text-center min-w-[72px] ${className}`}>
+    <div className={`rounded-sm px-4 py-2 text-center min-w-[72px] border ${className}`}>
       <div className="text-xl font-bold">{count}</div>
       <div className="text-xs font-medium">{label}</div>
     </div>
@@ -115,10 +115,10 @@ function SummaryStat({
 function AbnormalSection({ title, items }: { title: string; items: IndicatorResult[] }) {
   return (
     <div>
-      <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">{title}</h4>
+      <h4 className="serif-title text-sm font-bold text-muted-foreground mb-2">{title}</h4>
       <div className="space-y-1.5">
         {items.map((ind) => (
-          <div key={ind.code} className="flex items-start justify-between gap-3 bg-gray-50 rounded-lg px-3 py-2">
+          <div key={ind.code} className="flex items-start justify-between gap-3 bg-secondary/30 rounded-sm px-3 py-2">
             <div className="min-w-0">
               <div className="text-sm font-medium text-gray-800">{ind.name}</div>
               {ind.interpretation && (

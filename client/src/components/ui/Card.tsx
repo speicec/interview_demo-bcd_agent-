@@ -1,17 +1,19 @@
 import { cn } from "../../lib/utils";
-import type { ReactNode } from "react";
+import type { ReactNode, CSSProperties } from "react";
 
 export function Card({
   children,
   title,
   className = "",
+  style,
 }: {
   children: ReactNode;
   title?: string;
   className?: string;
+  style?: CSSProperties;
 }) {
   return (
-    <div className={cn("bg-card border border-border rounded-sm", className)}>
+    <div style={style} className={cn("bg-card border border-border rounded-sm", className)}>
       {title && (
         <div className="px-6 pt-5 pb-3">
           <h3 className="serif-title text-base font-bold text-foreground tracking-wide">
