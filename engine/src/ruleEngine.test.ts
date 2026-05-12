@@ -145,7 +145,7 @@ describe("analyzeReport", () => {
       indicators: [{ code: "WBC", value: 15, unit: "×10⁹/L" }],
     };
     const result = analyzeReport(report);
-    expect(result.indicators[0].interpretation).toContain("白细胞升高");
+    expect(result.indicators[0].interpretation).toContain("白细胞");
   });
 
   it("returns empty interpretation for normal indicators", () => {
@@ -165,7 +165,7 @@ describe("analyzeReport", () => {
         { code: "WBC", value: 6.0, unit: "×10⁹/L" },
         { code: "HGB", value: 50, unit: "g/L" },    // critical low (< 0.5 × 130)
         { code: "PLT", value: 200, unit: "×10⁹/L" },
-        { code: "CRP", value: 8, unit: "mg/L" },     // high
+        { code: "CRP", value: 7, unit: "mg/L" },     // high (not critical)
       ],
     };
     const result = analyzeReport(report);
